@@ -1,14 +1,10 @@
 # Fabrica de Software 2025-1
 
-Júlia D'Almeida Gaboardi
+## Nome da equipe
+
+- Júlia D'Almeida Gaboardi
 
 ## Propostas de projeto
-
-- Sistema de banco
-  - Cadastro do cliente
-  - Transações e transferencias
-  - Validação das informações da transação ou transferencia
-  - Rendimento e investimentos
 
 - Sistema de E-books
   - Cadastro do usuario
@@ -17,7 +13,29 @@ Júlia D'Almeida Gaboardi
   - Formas de pagamento
   - Opinião dos livros
   - Recomendações com base nos livros lidos e nas opiniões do usuario em relação aos livros
- 
+
+<s>
+
+- Sistema de banco
+  - Cadastro do cliente
+  - Transações e transferencias
+  - Validação das informações da transação ou transferencia
+  - Rendimento e investimentos
+</s>
+
+## Livro Eng Software Moderna
+
+[Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
+https://engsoftmoderna.info/cap3.html#hist%C3%B3rias-de-usu%C3%A1rios
+
+## Histórias de Usuário
+
+- Como um usuário, eu gostaria de ver e editar meus dados de cadastro como: nome, e-mail, idade e senha.
+- Como um usuario, eu gostaria de ter uma divisão dos meus livros como: lidos, não lidos e pendentes (começados).
+- Como um usuario, eu gostaria de ter filtros, para fazer a pesquisa mais precisa, como: categoria, autor, nome, gratuito, pago e ano lançamento.
+- Como um usuario, eu gostaria de ter as formas de pagamento, livres para trocar quando quiser, como: credito, debito, pix e paypal.
+- Como um usuario, eu gostaria de poder dar a opinião do livro como: numero de estrelas ate 5 e comentario sobre o livro caso a nota não for 5.
+
 ### Configuração inicial
 
 - git config --global user.name "NOME DO USUARIO NO GITHUB"
