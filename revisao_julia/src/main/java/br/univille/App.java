@@ -1,4 +1,5 @@
 package br.univille;
+import java.util.Arrays;
 import br.univille.entity.Cidade;
 import br.univille.entity.Pessoa;
 import br.univille.entity.Pokemon;
@@ -19,6 +20,7 @@ public class App {
         for(Pokemon umPokemon: zezinho.getListaPokemon()) {
             System.out.println(umPokemon);
         }
+        zezinho.getListaPokemon().stream().forEach(System.out::println);
         System.out.println(zezinho);
     }
 }

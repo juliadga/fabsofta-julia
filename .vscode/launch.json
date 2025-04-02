@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ProjetofabsoftebooksjuliaApplication<projetofabsoftebooksjulia>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "br.univille.projetofabsoftebooksjulia.ProjetofabsoftebooksjuliaApplication",
+            "projectName": "projetofabsoftebooksjulia",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
