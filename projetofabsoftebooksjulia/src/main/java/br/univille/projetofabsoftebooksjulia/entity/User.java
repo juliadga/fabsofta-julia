@@ -1,17 +1,27 @@
 package br.univille.projetofabsoftebooksjulia.entity;
-
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String email;
     private int age;
     private String password;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> books = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PaymentMethod> paymentMethods = new ArrayList<>();
-
     // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }

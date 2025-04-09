@@ -1,14 +1,29 @@
 package br.univille.projetofabsoftebooksjulia.entity;
+import jakarta.persistence.*;
+@Entity
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private String author;
     private String category;
     private boolean isFree;
     private int year;
+    @Enumerated(EnumType.STRING)
     private BookStatus status;
     private int rating; // 1 to 5 stars
     private String comment;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getTitle() {
         return title;
     }
@@ -56,5 +71,11 @@ public class Book {
     }
     public void setComment(String comment) {
         this.comment = comment;
+    }
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
     }
 }
