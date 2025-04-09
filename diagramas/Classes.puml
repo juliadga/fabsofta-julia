@@ -1,0 +1,64 @@
+@startuml
+package br.univille.projfabsoft {
+    class User {
+        - String name
+        - String email
+        - int age
+        - String password
+        - List<Book> books
+        - List<PaymentMethod> paymentMethods
+        --
+        + String getName()
+        + void setName(String name)
+        + String getEmail()
+        + void setEmail(String email)
+        + int getAge()
+        + void setAge(int age)
+        + String getPassword()
+        + void setPassword(String password)
+        + List<Book> getBooks()
+        + List<PaymentMethod> getPaymentMethods()
+    }
+    class Book {
+        - String title
+        - String author
+        - String category
+        - boolean isFree
+        - int year
+        - BookStatus status
+        - int rating
+        - String comment
+        --
+        + String getTitle()
+        + void setTitle(String title)
+        + String getAuthor()
+        + void setAuthor(String author)
+        + String getCategory()
+        + void setCategory(String category)
+        + boolean isFree()
+        + void setFree(boolean isFree)
+        + int getYear()
+        + void setYear(int year)
+        + BookStatus getStatus()
+        + void setStatus(BookStatus status)
+        + int getRating()
+        + void setRating(int rating)
+        + String getComment()
+        + void setComment(String comment)
+    }
+    class PaymentMethod {
+        - String type
+        --
+        + String getType()
+        + void setType(String type)
+    }
+    enum BookStatus {
+        READ
+        UNREAD
+        PENDING
+    }
+    User "1" -- "0..*" Book : owns
+    User "1" -- "0..*" PaymentMethod : uses
+    Book "1" -- "1" BookStatus : has
+}
+@enduml
