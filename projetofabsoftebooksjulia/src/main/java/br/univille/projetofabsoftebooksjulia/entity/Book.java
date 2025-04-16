@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String title;
     private String author;
     private String category;
@@ -18,10 +18,10 @@ public class Book {
     @JoinColumn(name = "user_id")
     private User user;
     // Getters and Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getTitle() {

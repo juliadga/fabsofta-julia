@@ -6,7 +6,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String name;
     private String email;
     private int age;
@@ -16,10 +16,10 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PaymentMethod> paymentMethods = new ArrayList<>();
     // Getters and Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getName() {

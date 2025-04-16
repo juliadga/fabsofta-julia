@@ -4,13 +4,13 @@ import jakarta.persistence.*;
 public class PaymentMethod {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
     private String type; // e.g., credit, debit, pix, paypal
     // Getters and Setters
-    public Long getId() {
+    public long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getType() {
