@@ -2,7 +2,7 @@ package br.univille.projetofabsoftebooksjulia.entity;
 import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-@Entity
+@Entity(name = "tb_user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

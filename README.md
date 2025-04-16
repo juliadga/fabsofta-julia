@@ -69,3 +69,10 @@ https://adoptium.net/
 5) pacote digitar domínio ao contrário ex: br.univille
 6) nome do projeto em minúsculo
 7) usar a pasta sugerida pelo vscode
+
+### Criar clientes banco de dados
+
+instalar thunder client ou rest client
+
+insert into cliente(nome,email,endereco,telefone,data_nascimento)
+values('zezinho','ze@ze.com','rua lalal100','5555-1234','2025-04-16')
