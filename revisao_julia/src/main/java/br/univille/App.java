@@ -3,6 +3,7 @@ import java.util.Arrays;
 import br.univille.entity.Cidade;
 import br.univille.entity.Pessoa;
 import br.univille.entity.Pokemon;
+@SuppressWarnings("unused")
 public class App {
     public static void main(String[] args) throws Exception {
         //System.out.println("Hello, World!");

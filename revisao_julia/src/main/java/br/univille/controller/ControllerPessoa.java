@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
+@SuppressWarnings("unused")
 public class ControllerPessoa implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {

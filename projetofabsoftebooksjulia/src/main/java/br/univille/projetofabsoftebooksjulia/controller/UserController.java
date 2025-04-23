@@ -3,6 +3,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,5 +49,17 @@ public class UserController {
         userAntigo.setPassword(user.getPassword());
         service.save(userAntigo);
         return new ResponseEntity<User>(userAntigo, HttpStatus.OK);
+    }
+    @DeleteMapping("/(id)")
+    public ResponseEntity<User> deleteUser(@PathVariable long id){
+        if(id <= 0){
+            return ResponseEntity.badRequest().build();
+        }
+        var userExcluir = service.getById(id);
+        if(userExcluir == null){
+            return ResponseEntity.notFound().build();
+        }
+        service.delete(id);
+        return new ResponseEntity<User>(userExcluir, HttpStatus.OK);
     }
 }
