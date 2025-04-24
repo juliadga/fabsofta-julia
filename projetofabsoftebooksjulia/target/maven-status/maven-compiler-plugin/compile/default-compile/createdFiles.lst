@@ -1,0 +1,9 @@
+br\univille\projetofabsoftebooksjulia\ProjetofabsoftebooksjuliaApplication.class
+br\univille\projetofabsoftebooksjulia\service\impl\UserServiceImpl.class
+br\univille\projetofabsoftebooksjulia\repository\UserRepository.class
+br\univille\projetofabsoftebooksjulia\entity\PaymentMethod.class
+br\univille\projetofabsoftebooksjulia\entity\Book.class
+br\univille\projetofabsoftebooksjulia\service\UserService.class
+br\univille\projetofabsoftebooksjulia\entity\User.class
+br\univille\projetofabsoftebooksjulia\entity\BookStatus.class
+br\univille\projetofabsoftebooksjulia\controller\UserController.class
