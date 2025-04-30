@@ -9,7 +9,9 @@ Content-Type: application/json
     "name": "julia",
     "email": "fer@hgd.com.br",
     "age": "21",
-    "password": "feck54@"
+    "password": "feck54@",
+    "books": "Harry Potter",
+    "paymentMethods": "paypal"
 }
 
 ### api cliente put
@@ -20,7 +22,9 @@ Content-Type: application/json
     "name": "julia engeler",
     "email": "fer@hgd.com.br",
     "age": "21",
-    "password": "feck54@"
+    "password": "feck54@",
+    "books": "Harry Potter",
+    "paymentMethods": "paypal"
 }
 
 ### api cliente delete
