@@ -10,8 +10,15 @@ Content-Type: application/json
     "email": "fer@hgd.com.br",
     "age": "21",
     "password": "feck54@",
-    "books": "Harry Potter",
-    "paymentMethods": "paypal"
+    "title": "Harry Potter",
+    "author": "J.K. Rowling",
+    "category": "Fantasy",
+    "isFree": true,
+    "year": 2000,
+    "status": "READ",
+    "rating": 5,
+    "comment": "",
+    "type": "Paypal"
 }
 
 ### api cliente put
@@ -23,8 +30,15 @@ Content-Type: application/json
     "email": "fer@hgd.com.br",
     "age": "21",
     "password": "feck54@",
-    "books": "Harry Potter",
-    "paymentMethods": "paypal"
+    "title": "Harry Potter",
+    "author": "J.K. Rowling",
+    "category": "Fantasy",
+    "isFree": true,
+    "year": 2000,
+    "status": "READ",
+    "rating": 5,
+    "comment": "",
+    "type": "Paypal"
 }
 
 ### api cliente delete
