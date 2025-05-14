@@ -18,7 +18,7 @@ Content-Type: application/json
     "status": "READ",
     "rating": 5,
     "comment": "",
-    "type": "Paypal"
+    "type": ""
 }
 
 ### api cliente put
@@ -33,7 +33,7 @@ Content-Type: application/json
     "title": "Harry Potter",
     "author": "J.K. Rowling",
     "category": "Fantasy",
-    "isFree": true,
+    "isFree": false,
     "year": 2000,
     "status": "READ",
     "rating": 5,

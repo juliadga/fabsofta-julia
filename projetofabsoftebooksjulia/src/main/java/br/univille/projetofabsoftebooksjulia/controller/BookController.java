@@ -3,19 +3,26 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import br.univille.projetofabsoftebooksjulia.entity.Book;
-import br.univille.projetofabsoftebooksjulia.repository.BookRepository;
+import br.univille.projetofabsoftebooksjulia.service.BookService;
 @RestController
-@RequestMapping("/api/v1/users")
+@RequestMapping("/api/v1/books")
 public class BookController {
     @Autowired
-    private BookRepository repository;
+    private BookService service;
 
     @GetMapping
-    public ResponseEntity<List<Book>> getBooks() {
-        var books = repository.findAll();
-        return new ResponseEntity<>(books, HttpStatus.OK);
+    public ResponseEntity<List<Book>> getBooks(){
+        var listaBooks = service.getAll();
+        return new ResponseEntity<List<Book>>(listaBooks, HttpStatus.OK);
     }
 
     @PostMapping
@@ -23,8 +30,11 @@ public class BookController {
         if (book == null) {
             return ResponseEntity.badRequest().build();
         }
-        var savedBook = repository.save(book);
-        return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
+        if(book.getId() == 0){
+            service.save(book);
+            return new ResponseEntity<Book>(book, HttpStatus.OK);
+        }
+        return ResponseEntity.badRequest().build();
     }
 
     @PutMapping("/{id}")
@@ -32,21 +42,20 @@ public class BookController {
         if (id <= 0 || book == null) {
             return ResponseEntity.badRequest().build();
         }
-        var existingBook = repository.findById(id);
-        if (existingBook.isEmpty()) {
+        var bookAntigo = service.getById(id);
+        if (bookAntigo == null) {
             return ResponseEntity.notFound().build();
         }
-        var bookToUpdate = existingBook.get();
-        bookToUpdate.setTitle(book.getTitle());
-        bookToUpdate.setAuthor(book.getAuthor());
-        bookToUpdate.setCategory(book.getCategory());
-        bookToUpdate.setFree(book.isFree());
-        bookToUpdate.setYear(book.getYear());
-        bookToUpdate.setStatus(book.getStatus());
-        bookToUpdate.setRating(book.getRating());
-        bookToUpdate.setComment(book.getComment());
-        var updatedBook = repository.save(bookToUpdate);
-        return new ResponseEntity<>(updatedBook, HttpStatus.OK);
+        bookAntigo.setTitle(book.getTitle());
+        bookAntigo.setAuthor(book.getAuthor());
+        bookAntigo.setCategory(book.getCategory());
+        bookAntigo.setFree(book.isFree());
+        bookAntigo.setYear(book.getYear());
+        bookAntigo.setStatus(book.getStatus());
+        bookAntigo.setRating(book.getRating());
+        bookAntigo.setComment(book.getComment());
+        service.save(bookAntigo);
+        return new ResponseEntity<Book>(bookAntigo, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
@@ -54,11 +63,11 @@ public class BookController {
         if (id <= 0) {
             return ResponseEntity.badRequest().build();
         }
-        var bookToDelete = repository.findById(id);
-        if (bookToDelete.isEmpty()) {
+        var bookExcluir = service.getById(id);
+        if(bookExcluir == null){
             return ResponseEntity.notFound().build();
         }
-        repository.deleteById(id);
-        return new ResponseEntity<>(bookToDelete.get(), HttpStatus.OK);
+        service.delete(id);
+        return new ResponseEntity<Book>(bookExcluir, HttpStatus.OK);
     }
 }
