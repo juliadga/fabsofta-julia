@@ -1,4 +1,22 @@
 <main class="container">
     <h2>User</h2>
-    <table class="table"></table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umUser of listaUsers">
+                <td>{{umUser.name}}</td>
+                <td>{{umUser.email}}</td>
+                <td>{{umUser.age}}</td>
+                <td>{{umUser.password}}</td>
+            </tr>
+        </tbody>
+    </table>
 </main>
