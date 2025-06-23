@@ -23,11 +23,6 @@
   - Rendimento e investimentos
 </s>
 
-## Livro Eng Software Moderna
-
-[Eng. Soft Moderna - Requisitos](https://engsoftmoderna.info/cap3.html)
-https://engsoftmoderna.info/cap3.html#hist%C3%B3rias-de-usu%C3%A1rios
-
 ## Histórias de Usuário
 
 - Como um usuário, eu gostaria de ver e editar meus dados de cadastro como: nome, e-mail, idade e senha.
@@ -52,8 +47,6 @@ https://engsoftmoderna.info/cap3.html#hist%C3%B3rias-de-usu%C3%A1rios
 - git push -u origin main
 
 ### Revisão de Java
-
-https://adoptium.net/
 
 - JRE - Java Runtime Environment (java.exe)
   - Máquina virtual do Java - interpreta o Bytecode(.class) do Java para linguagem de máquina
